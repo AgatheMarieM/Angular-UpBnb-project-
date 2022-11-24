@@ -18,16 +18,16 @@
     align-items: center;
 
     .house-details-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      h4 {
+      h5 {
+        display: block;
         margin: 0;
+        padding: 0;
       }
 
-      p {
+      small {
+        display: block;
         margin: 0;
+        padding: 0;
       }
     }
 
