@@ -1,3 +1,13 @@
+interface HousesData {
+  page: number
+  total: number
+  pages: number
+  limit: number
+  data: House[]
+}
+
+export {HousesData};
+
 interface House  {
   id: number,
   title: string,
@@ -10,3 +20,4 @@ interface House  {
 }
 
 export {House};
+
