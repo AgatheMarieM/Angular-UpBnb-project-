@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -17,6 +18,7 @@ import { HousesComponent } from './houses/houses.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FontAwesomeModule
   ],
   providers: [],
