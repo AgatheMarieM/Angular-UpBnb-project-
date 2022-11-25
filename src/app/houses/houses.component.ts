@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {UpBnbService} from "../up-bnb.service";
+import {House} from "../interfaces";
 
 @Component({
   selector: 'app-houses',
@@ -9,6 +10,8 @@ import {UpBnbService} from "../up-bnb.service";
 export class HousesComponent {
   constructor(private upBnb: UpBnbService ) {
   }
+
+ houses?: House[];
 
 
 }
