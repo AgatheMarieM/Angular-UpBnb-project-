@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-/*import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
-import {faHeart} from '@fortawesome/free-solid-svg-icons';*/
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import {faHeart} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,9 +9,9 @@ import {faHeart} from '@fortawesome/free-solid-svg-icons';*/
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-/*
+
   faMagnifyingGlass = faMagnifyingGlass;
   faHeart = faHeart;
-*/
+
 
 }
