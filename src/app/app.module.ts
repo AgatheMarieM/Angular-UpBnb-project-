@@ -9,13 +9,15 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HouseComponent } from './house/house.component';
 import { HousesComponent } from './houses/houses.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HouseComponent,
-    HousesComponent
+    HousesComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
