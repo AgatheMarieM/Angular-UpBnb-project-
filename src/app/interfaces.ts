@@ -21,3 +21,15 @@ interface House  {
 
 export {House};
 
+interface HouseDetails{
+  id: number,
+  title: string,
+  country: string,
+  city: string,
+  rating: number,
+  price: number,
+  featured_photo: string,
+  description: string
+}
+
+export {HouseDetails};
