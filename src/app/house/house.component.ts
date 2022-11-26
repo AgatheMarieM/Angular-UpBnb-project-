@@ -6,6 +6,7 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./house.component.scss']
 })
 export class HouseComponent {
+  @Input() id!: number;
   @Input() image!: string;
   @Input() city!: string;
   @Input() country!: string;
