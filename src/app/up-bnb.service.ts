@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {HousesData} from "./interfaces";
+import { HouseDetails, HousesData} from "./interfaces";
+
 
 const BASE_URL = "https://m9-frontend.upskill.appx.pt/upbnb";
 
@@ -16,4 +17,10 @@ export class UpBnbService {
   getHouses(){
     return this.http.get<HousesData>(BASE_URL + "/casas");
   }
+
+  getDetails(id: number){
+    return this.http.get<HouseDetails>(BASE_URL + "/casas/" + id ); //take off the  ":" that appear on Postman
+  }
+  //HouseDetails is not a list! <HouseDetails[]> not needed, no "casting"!
+
 }
