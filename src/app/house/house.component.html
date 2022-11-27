@@ -1,10 +1,12 @@
 <div class="house-container" >
-  <div class="house-image" [routerLink]="['/details', id]">
-    <img src="{{image}}"/>
+  <div class="house-image" >
+    <a [routerLink]="['/details', id]" >
+      <img src="{{image}}" alt="house-img"/>
+    </a>
   </div>
   <div class="house-details">
     <div class="house-details-text">
-      <h5>{{city}}, {{country}}</h5>
+      <h5 >{{city}}, {{country}}</h5>
       <small>{{host}}</small>
       <small><strong>{{price}}€</strong> noite</small>
     </div>
@@ -13,3 +15,4 @@
     </div>
   </div>
 </div>
+
