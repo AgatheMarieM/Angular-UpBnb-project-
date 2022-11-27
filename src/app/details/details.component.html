@@ -1,16 +1,16 @@
-<div class="details-container">
+<div class="details-container" *ngIf="details"> <!-- need a condition because details can be null -->
   <h1>
-    Hacienda Bodeguerra
+    {{details.title}}
   </h1>
   <h4>
-    Rating - City, Country
+    Rating - {{details.city}}, {{details.country}}
   </h4>
-  <img src="#"/>
+  <img [src]="details.featured_photo" alt="house-photo"/>
   <h5>
-    price noite
+    {{details.price}} euros noite
   </h5>
   <p>
-    House description
+    {{details.description}}
   </p>
 
   <!-- API: Anfitriao da casa -->
