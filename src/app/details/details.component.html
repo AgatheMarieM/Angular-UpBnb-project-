@@ -30,10 +30,11 @@
     <fa-icon [icon]="faSmoking"></fa-icon>
   </div>
 
+  <h4>Sobre o anfitrião</h4>
   <!-- API: Anfitriao da casa -->
   <div class="host-presentation" *ngIf="host"> <!-- condition because "object is possibly undefined" (can be null) -->
     <div class="host-portrait">
-      <img [src] = "host.photo" alt="host-photo">
+      <img [src]="host.photo" alt="host-photo">
     </div>
     <div class="host-name">
       {{host.name}}
@@ -43,10 +44,14 @@
     </div>
   </div>
 
-  <!-- API: Fotos da casa -->
-  <div class="house-gallery">
-    loop through "fotografias da casa"
+  <h4>Galeria</h4>  <!-- API: Fotos da casa -->
+  <div class="house-gallery" *ngIf="photos" > <!-- condition because "object is possibly undefined" (can be null) -->
+    <div *ngFor="let photo of photos">
+      <img [src]="photo" alt="house-photos"/>
+    </div>
   </div>
+
+
   <!-- API: Comentarios da casa -->
   <div class="house-commentaries">
     loop through "comentarios da casa"
