@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
-import {HouseDetails} from "../interfaces";
+import {HouseDetails, HouseFeatures, Features} from "../interfaces";
 
 @Component({
   selector: 'app-details',
@@ -13,6 +13,7 @@ export class DetailsComponent {
 
   id: number;
   details?: HouseDetails;
+  features?: Features[] = [];
 
 
   constructor(private route: ActivatedRoute, public UpBnbService: UpBnbService) {
@@ -22,6 +23,11 @@ export class DetailsComponent {
   ngOnInit(): void {
     this.UpBnbService.getDetails(this.id).subscribe((details) => {
         this.details = details;
+      }
+    )
+    this.UpBnbService.getFeatures(this.id).subscribe((features: HouseFeatures) => {
+        this.features = features.features;
+        console.log(this.features);
       }
     )
   }
