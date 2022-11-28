@@ -8,7 +8,7 @@ interface HousesData {
 
 export {HousesData};
 
-interface House  {
+interface House {
   id: number,
   title: string,
   country: string,
@@ -21,7 +21,7 @@ interface House  {
 
 export {House};
 
-interface HouseDetails{
+interface HouseDetails {
   id: number,
   title: string,
   country: string,
@@ -33,3 +33,23 @@ interface HouseDetails{
 }
 
 export {HouseDetails};
+
+
+interface HouseFeatures {
+  features: Features[]
+}
+
+export {HouseFeatures};
+
+interface Features {
+  smokingAllowed?: string,
+  washingMachine?: string,
+  airConditioner?: string,
+  fireplace?: string,
+  tv?: string,
+  petsAllowed?: string,
+  wifi?: string,
+  microwave?: string
+}
+
+export {Features};
