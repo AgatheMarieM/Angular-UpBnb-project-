@@ -51,10 +51,26 @@
     </div>
   </div>
 
-
+  <h4>Comentários</h4>  <!-- API: Fotos da casa -->
   <!-- API: Comentarios da casa -->
-  <div class="house-commentaries">
-    loop through "comentarios da casa"
+  <div *ngIf="reviews">
+    <div class="house-commentaries" *ngFor="let review of reviews.reviews">
+      <div class="reviewer-portrait">
+        <img [src]="review.photo" alt="portrait"/>
+      </div>
+      <div class="review-details">
+        <h5>
+          {{review.name}}
+        </h5>
+        <p>
+          {{review.date}}
+        </p>
+      </div>
+      <p class="review-comment">
+        {{review.comment}}
+      </p>
+    </div>
   </div>
+
 
 </div>
