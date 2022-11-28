@@ -69,3 +69,15 @@ interface HousePhotos {
 }
 
 export {HousePhotos};
+
+interface HouseReviews {
+  reviews: [{
+    name: string,
+    photo: string,
+    date: string,
+    comment: string
+  }]
+}
+
+export {HouseReviews};
+
