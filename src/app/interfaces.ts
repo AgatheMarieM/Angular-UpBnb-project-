@@ -21,6 +21,16 @@ interface House {
 
 export {House};
 
+interface HouseHost {
+  name: string,
+  photo: string,
+  type: string,
+  rating: number
+}
+
+export {HouseHost};
+
+
 interface HouseDetails {
   id: number,
   title: string,
