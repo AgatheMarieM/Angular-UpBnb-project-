@@ -63,3 +63,9 @@ interface Features {
 }
 
 export {Features};
+
+interface HousePhotos {
+  photos: string[]
+}
+
+export {HousePhotos};
