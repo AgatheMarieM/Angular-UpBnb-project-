@@ -36,7 +36,7 @@ export {HouseDetails};
 
 
 interface HouseFeatures {
-  features: Features[]
+  features: string[]
 }
 
 export {HouseFeatures};
