@@ -14,6 +14,10 @@ export class UpBnbService {
 
   constructor(public http: HttpClient) {}
 
+  getSearchResult(country: string){
+    return this.http.get<HousesData>(BASE_URL + "/casas?search=" + country);
+  }
+
   getHouses(){
     return this.http.get<HousesData>(BASE_URL + "/casas");
   }
