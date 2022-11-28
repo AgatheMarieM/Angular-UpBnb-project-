@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
-import {HouseDetails, HouseFeatures, HouseHost, HousePhotos} from "../interfaces";
+import {HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews} from "../interfaces";
 import {faDog} from '@fortawesome/free-solid-svg-icons';
 import {faAirFreshener} from '@fortawesome/free-solid-svg-icons';
 import {faWifi} from '@fortawesome/free-solid-svg-icons';
@@ -37,6 +37,7 @@ export class DetailsComponent {
   features?: string[] = [];
   host?: HouseHost;
   photos?: string[] = [];
+  reviews?: HouseReviews;
 
 
   constructor(private route: ActivatedRoute, public UpBnbService: UpBnbService) {
@@ -58,8 +59,18 @@ export class DetailsComponent {
       }
     )
 
+    this.UpBnbService.getHouseHost(this.id).subscribe((host) => {
+        this.host = host;
+        console.log(this.host);
+      }
+    )
+
     this.UpBnbService.getHousePhotos(this.id).subscribe((photos: HousePhotos) => {
       this.photos = photos.photos;
+    })
+
+    this.UpBnbService.getHouseReviews(this.id).subscribe((reviews) => {
+      this.reviews = reviews;
     })
 
   }
