@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
-import {HouseDetails, HouseFeatures, HouseHost} from "../interfaces";
+import {HouseDetails, HouseFeatures, HouseHost, HousePhotos} from "../interfaces";
 import {faDog} from '@fortawesome/free-solid-svg-icons';
 import {faAirFreshener} from '@fortawesome/free-solid-svg-icons';
 import {faWifi} from '@fortawesome/free-solid-svg-icons';
 import {faTv} from "@fortawesome/free-solid-svg-icons/faTv";
 import {faSmoking} from '@fortawesome/free-solid-svg-icons';
+
 /*import {faWashingMachine} from '@fortawesome/free-solid-svg-icons';
 import {faFireplace} from '@fortawesome/free-solid-svg-icons';
 import {faMicrowave} from '@fortawesome/free-solid-svg-icons';*/
-
 
 
 @Component({
@@ -25,17 +25,18 @@ export class DetailsComponent {
   faTv = faTv;
   faSmoking = faSmoking;
   faWifi = faWifi;
-/*
-  faWashingMachine = faWashingMachine;
-  faFireplace = faFireplace;
-  faMicrowave = faMicrowave;
-*/
+  /*
+    faWashingMachine = faWashingMachine;
+    faFireplace = faFireplace;
+    faMicrowave = faMicrowave;
+  */
 
 
   id: number;
   details?: HouseDetails;
   features?: string[] = [];
   host?: HouseHost;
+  photos?: string[] = [];
 
 
   constructor(private route: ActivatedRoute, public UpBnbService: UpBnbService) {
@@ -57,9 +58,11 @@ export class DetailsComponent {
       }
     )
 
+    this.UpBnbService.getHousePhotos(this.id).subscribe((photos: HousePhotos) => {
+      this.photos = photos.photos;
+    })
+
   }
-
-
 
 
 }
