@@ -1,7 +1,17 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
-import {HouseDetails, HouseFeatures, Features} from "../interfaces";
+import {HouseDetails, HouseFeatures} from "../interfaces";
+import {faDog} from '@fortawesome/free-solid-svg-icons';
+import {faAirFreshener} from '@fortawesome/free-solid-svg-icons';
+import {faWifi} from '@fortawesome/free-solid-svg-icons';
+import {faTv} from "@fortawesome/free-solid-svg-icons/faTv";
+import {faSmoking} from '@fortawesome/free-solid-svg-icons';
+/*import {faWashingMachine} from '@fortawesome/free-solid-svg-icons';
+import {faFireplace} from '@fortawesome/free-solid-svg-icons';
+import {faMicrowave} from '@fortawesome/free-solid-svg-icons';*/
+
+
 
 @Component({
   selector: 'app-details',
@@ -10,10 +20,21 @@ import {HouseDetails, HouseFeatures, Features} from "../interfaces";
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
+  faDog = faDog;
+  faAirFreshener = faAirFreshener;
+  faTv = faTv;
+  faSmoking = faSmoking;
+  faWifi = faWifi;
+/*
+  faWashingMachine = faWashingMachine;
+  faFireplace = faFireplace;
+  faMicrowave = faMicrowave;
+*/
+
 
   id: number;
   details?: HouseDetails;
-  features?: Features[] = [];
+  features?: string[] = [];
 
 
   constructor(private route: ActivatedRoute, public UpBnbService: UpBnbService) {
@@ -31,6 +52,8 @@ export class DetailsComponent {
       }
     )
   }
+
+
 
 
 }
