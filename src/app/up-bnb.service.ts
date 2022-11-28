@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {HouseDetails, HouseFeatures, HouseHost, HousePhotos, HousesData} from "./interfaces";
+import {HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews, HousesData} from "./interfaces";
 
 
 const BASE_URL = "https://m9-frontend.upskill.appx.pt/upbnb";
@@ -33,6 +33,10 @@ export class UpBnbService {
 
   getHousePhotos(id: number){
     return this.http.get<HousePhotos>(BASE_URL + "/casas/" + id + "/photos");
+  }
+
+  getHouseReviews(id: number){
+    return this.http.get<HouseReviews>(BASE_URL + "/casas/" + id + "/reviews");
   }
 
 }
