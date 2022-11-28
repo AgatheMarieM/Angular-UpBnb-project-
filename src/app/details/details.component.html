@@ -13,29 +13,43 @@
     {{details.description}}
   </p>
   <div class="details-features">
-    features
+    <!-- API: features -->
+    {{features}}
+</div>
+
+  <div *ngIf="features && features.includes('petsAllowed')">
+  <fa-icon [icon]="faDog"></fa-icon>
+</div>
+  <div *ngIf="features && features.includes('airConditioner')">
+    <fa-icon [icon]="faAirFreshener"></fa-icon>
+  </div>
+  <div *ngIf="features && features.includes('tv')">
+    <fa-icon [icon]="faTv"></fa-icon>
+  </div>
+  <div *ngIf="features && features.includes('smokingAllowed')">
+    <fa-icon [icon]="faSmoking"></fa-icon>
   </div>
 
-  <!-- API: Anfitriao da casa -->
-  <div class="host-presentation">
-    <div class="host-portrait">
-      Portrait
-    </div>
-    <div class="host-name">
-      Antony Bastos
-    </div>
-    <div class="host-rating">
-      rating
-    </div>
+<!-- API: Anfitriao da casa -->
+<div class="host-presentation">
+  <div class="host-portrait">
+    Portrait
   </div>
+  <div class="host-name">
+    Antony Bastos
+  </div>
+  <div class="host-rating">
+    rating
+  </div>
+</div>
 
-  <!-- API: Fotos da casa -->
-  <div class="house-gallery">
-    loop through "fotografias da casa"
-  </div>
-  <!-- API: Comentarios da casa -->
-  <div class="house-commentaries">
-    loop through "comentarios da casa"
-  </div>
+<!-- API: Fotos da casa -->
+<div class="house-gallery">
+  loop through "fotografias da casa"
+</div>
+<!-- API: Comentarios da casa -->
+<div class="house-commentaries">
+  loop through "comentarios da casa"
+</div>
 
 </div>
