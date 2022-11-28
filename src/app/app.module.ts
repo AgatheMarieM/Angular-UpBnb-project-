@@ -10,6 +10,9 @@ import { HouseComponent } from './house/house.component';
 import { HousesComponent } from './houses/houses.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DetailsComponent } from './details/details.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { DetailsComponent } from './details/details.component';
     NavBarComponent,
     HouseComponent,
     HousesComponent,
-    DetailsComponent
+    DetailsComponent,
+    WelcomeComponent,
+    FavoritesComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
