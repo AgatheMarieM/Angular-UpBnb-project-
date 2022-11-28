@@ -1,4 +1,4 @@
-<div class="details-container" *ngIf="details"> <!-- need a condition because details can be null -->
+<div class="details-container" *ngIf="details"> <!-- condition because "object is possibly undefined" (can be null) -->
   <h1>
     {{details.title}}
   </h1>
@@ -13,13 +13,13 @@
     {{details.description}}
   </p>
   <div class="details-features">
-    <!-- API: features -->
-    {{features}}
-</div>
+
+    <!--    {{features}}-->
+  </div>
 
   <div *ngIf="features && features.includes('petsAllowed')">
-  <fa-icon [icon]="faDog"></fa-icon>
-</div>
+    <fa-icon [icon]="faDog"></fa-icon>
+  </div>
   <div *ngIf="features && features.includes('airConditioner')">
     <fa-icon [icon]="faAirFreshener"></fa-icon>
   </div>
@@ -30,26 +30,26 @@
     <fa-icon [icon]="faSmoking"></fa-icon>
   </div>
 
-<!-- API: Anfitriao da casa -->
-<div class="host-presentation">
-  <div class="host-portrait">
-    Portrait
+  <!-- API: Anfitriao da casa -->
+  <div class="host-presentation" *ngIf="host"> <!-- condition because "object is possibly undefined" (can be null) -->
+    <div class="host-portrait">
+      <img [src] = "host.photo" alt="host-photo">
+    </div>
+    <div class="host-name">
+      {{host.name}}
+    </div>
+    <div class="host-rating">
+      ☆{{host.rating}}
+    </div>
   </div>
-  <div class="host-name">
-    Antony Bastos
-  </div>
-  <div class="host-rating">
-    rating
-  </div>
-</div>
 
-<!-- API: Fotos da casa -->
-<div class="house-gallery">
-  loop through "fotografias da casa"
-</div>
-<!-- API: Comentarios da casa -->
-<div class="house-commentaries">
-  loop through "comentarios da casa"
-</div>
+  <!-- API: Fotos da casa -->
+  <div class="house-gallery">
+    loop through "fotografias da casa"
+  </div>
+  <!-- API: Comentarios da casa -->
+  <div class="house-commentaries">
+    loop through "comentarios da casa"
+  </div>
 
 </div>
