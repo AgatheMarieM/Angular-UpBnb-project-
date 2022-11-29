@@ -3,6 +3,9 @@
     <a [routerLink]="['/details', id]" >
       <img src="{{image}}" alt="house-img"/>
     </a>
+    <div class="heart-icon" (click)="upBnbService.toggleFavorite(id)">
+      <fa-icon [icon]="upBnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>
+    </div>
   </div>
   <div class="house-details">
     <div class="house-details-text">
