@@ -9,19 +9,22 @@ import {House, HousesData} from "../interfaces";
 })
 export class SearchBarComponent {
 
-  // country?: string;
-  houses?: House[] = [];
-  input?: string = document.querySelector('#countryInput').nodeValue;
-  getInput(){
-    return this.input;
-  }
+  houseResults?: House[] = [];
 
   constructor(private upBnbService: UpBnbService) {
   }
 
+  getInput(event: any){
+    console.log(event.target.value);
+    this.upBnbService.getSearchResult(event.target.value).subscribe((houses: HousesData) => {
+        this.houseResults = houses.data;
+      }
+    )
+  }
+
 /*  ngOnInit(): void {
-    this.upBnbService.getSearchResult(this.country).subscribe((houses: HousesData) => {
-        this.houses = houses.data;
+    this.upBnbService.getHouses().subscribe((houses: HousesData) => {
+        this.houseResults = houses.data;
       }
     )
   }*/
