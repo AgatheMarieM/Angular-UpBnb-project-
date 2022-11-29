@@ -44,7 +44,7 @@ export class UpBnbService {
   }
 
 //Managing favorites:
-  favorites: number[] = [];
+  favorites: number[] = JSON.parse(localStorage.getItem("favorites") || "[]"); //get favorites list or empty list
 
   isFavorite(id:number){
     return this.favorites.includes(id);
@@ -57,6 +57,7 @@ export class UpBnbService {
     } else{
       this.favorites.push(id); //we push it into the list, wasn't fav yet
     }
+    localStorage.setItem("favorites", JSON.stringify(this.favorites));//setting favorites item in the localStorage
   }
 
 }
