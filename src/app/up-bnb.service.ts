@@ -43,4 +43,20 @@ export class UpBnbService {
     return this.http.get<HouseReviews>(BASE_URL + "/casas/" + id + "/reviews");
   }
 
+//Managing favorites:
+  favorites: number[] = [];
+
+  isFavorite(id:number){
+    return this.favorites.includes(id);
+  }
+
+  toggleFavorite(id: number){
+    if(this.isFavorite(id)){
+      //remove id from fav (was in the list and user clicks again > removing)
+      this.favorites.splice(this.favorites.indexOf(id), 1) //favorite was in the list, deleting it
+    } else{
+      this.favorites.push(id); //we push it into the list, wasn't fav yet
+    }
+  }
+
 }
