@@ -23,7 +23,7 @@ export class UpBnbService {
   }
 
   getDetails(id: number){
-    return this.http.get<HouseDetails>(BASE_URL + "/casas/" + id ); //take off the  ":" that appear on Postman
+    return this.http.get<HouseDetails>(BASE_URL + "/casas/" + id ); //take off the  ":" from Postman
   }
   //HouseDetails is not a list! <HouseDetails[]> not needed, no "casting"!
 
@@ -59,5 +59,11 @@ export class UpBnbService {
     }
     localStorage.setItem("favorites", JSON.stringify(this.favorites));//setting favorites item in the localStorage
   }
+
+  getFavorites(){
+    return this.favorites;
+  }
+
+
 
 }
