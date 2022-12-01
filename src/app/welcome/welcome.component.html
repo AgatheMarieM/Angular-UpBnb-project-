@@ -1,1 +1,42 @@
-<p>welcome works!</p>
+<div class="welcome-container">
+  <h1>
+    Bem Vindx
+  </h1>
+  <h2>
+    Ao seu perfil
+  </h2>
+  <h3>
+    As minhas reservas
+  </h3>
+  <div *ngIf="currentBookings">
+    <div class="current-booking" *ngFor="let house of currentBookings"
+    >
+      <div class="house-container">
+        <div class="house-image">
+          <img src="{{house.featured_photo}}" alt="house-img"/>
+          <div class="heart-icon" (click)="upBnbService.toggleFavorite(house.id)">
+            <fa-icon [icon]="upBnbService.isFavorite(house.id) ? faHeartSolid : faHeart"></fa-icon>
+          </div>
+        </div>
+        <div class="house-details">
+          <div class="house-details-text">
+            <h5>{{house.city}}, {{house.country}}</h5>
+            <small>{{house.time}}</small>
+            <small><strong>{{house.price}}€</strong></small>
+          </div>
+          <div>
+            ☆ {{house.rating}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <h5>
+    Reservas Passadas
+  </h5>
+  <div>
+
+  </div>
+</div>
