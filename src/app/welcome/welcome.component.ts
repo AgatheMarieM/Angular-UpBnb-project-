@@ -3,6 +3,7 @@ import {UpBnbService} from "../up-bnb.service";
 import {House, HousesData} from "../interfaces";
 import {faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-welcome',
@@ -12,6 +13,7 @@ import {faHeart} from '@fortawesome/free-regular-svg-icons';
 export class WelcomeComponent {
   faHeart = faHeart;
   faHeartSolid = faHeartSolid;
+  faStar = faStar;
   currentBookings?: House[] = [];
   pastBookings?: House[] = [];
 
