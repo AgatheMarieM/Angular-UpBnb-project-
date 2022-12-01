@@ -8,10 +8,9 @@
   <h2>
     As minhas reservas
   </h2>
-  <div *ngIf="currentBookings">
-    <div class="current-booking" *ngFor="let house of currentBookings"
+  <div class="current-booking"  *ngIf="currentBookings">
+    <div class="house-container" *ngFor="let house of currentBookings"
     >
-      <div class="house-container">
         <div class="house-image">
           <img src="{{house.featured_photo}}" alt="house-img"/>
           <div class="heart-icon" (click)="upBnbService.toggleFavorite(house.id)">
@@ -20,7 +19,7 @@
         </div>
         <div class="house-details">
           <div class="house-details-text">
-            <h5>{{house.city}}, {{house.country}}</h5>
+            <p>{{house.city}}, {{house.country}}</p>
             <small>{{house.time}}</small>
             <small><strong>{{house.price}}€</strong></small>
           </div>
@@ -29,7 +28,6 @@
             {{house.rating}}
           </div>
         </div>
-      </div>
     </div>
   </div>
   <h2>
@@ -47,7 +45,7 @@
         </div>
         <div class="house-details">
           <div class="house-details-text">
-            <h5>{{house.city}}, {{house.country}}</h5>
+            <p>{{house.city}}, {{house.country}}</p>
             <small>{{house.time}}</small>
             <small><strong>{{house.price}}€</strong></small>
           </div>
