@@ -6,6 +6,9 @@
     {{details.rating}}☆ - {{details.city}}, {{details.country}}
   </h4>
   <img [src]="details.featured_photo" alt="house-photo"/>
+  <div class="heart-icon" (click)="this.UpBnbService.toggleFavorite(details.id)">
+    <fa-icon [icon]="this.UpBnbService.isFavorite(details.id) ? faHeartSolid : faHeart"></fa-icon>
+  </div>
   <h5>
     {{details.price}}€ noite
   </h5>
