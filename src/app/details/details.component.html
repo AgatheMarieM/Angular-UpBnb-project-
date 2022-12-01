@@ -3,11 +3,15 @@
     {{details.title}}
   </h1>
   <h4>
-    {{details.rating}}☆ - {{details.city}}, {{details.country}}
+    <fa-icon [icon]="faStar"></fa-icon>
+    {{details.rating}} - {{details.city}}, {{details.country}}
   </h4>
+
+  <div class="house-image">
   <img [src]="details.featured_photo" alt="house-photo"/>
   <div class="heart-icon" (click)="this.UpBnbService.toggleFavorite(details.id)">
     <fa-icon [icon]="this.UpBnbService.isFavorite(details.id) ? faHeartSolid : faHeart"></fa-icon>
+  </div>
   </div>
   <h5>
     {{details.price}}€ noite
