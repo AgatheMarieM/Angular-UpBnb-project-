@@ -71,6 +71,10 @@ export class UpBnbService {
     return this.http.get<HouseReviews>(BASE_URL + "/casas/" + id + "/reviews");
   }
 
+  getCurrentBookings(){
+    return this.http.get<HousesData>(BASE_URL + "/casas/current");
+  }
+
 
 
 
