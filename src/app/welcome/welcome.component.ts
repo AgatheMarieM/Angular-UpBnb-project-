@@ -13,6 +13,7 @@ export class WelcomeComponent {
   faHeart = faHeart;
   faHeartSolid = faHeartSolid;
   currentBookings?: House[] = [];
+  pastBookings?: House[] = [];
 
   constructor(public upBnbService: UpBnbService) {
   }
@@ -21,6 +22,10 @@ export class WelcomeComponent {
   ngOnInit(): void {
     this.upBnbService.getCurrentBookings().subscribe((houses: HousesData) => {
       this.currentBookings = houses.data;
+    })
+
+    this.upBnbService.getPastBookings().subscribe((houses: HousesData) => {
+      this.pastBookings = houses.data;
     })
   }
 }
