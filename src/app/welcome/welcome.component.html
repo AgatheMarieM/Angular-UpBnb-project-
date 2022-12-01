@@ -1,13 +1,13 @@
 <div class="welcome-container">
   <h1>
-    Bem Vindx
+    Bem Vindo.a
   </h1>
   <h2>
     Ao seu perfil
   </h2>
-  <h3>
+  <h2>
     As minhas reservas
-  </h3>
+  </h2>
   <div *ngIf="currentBookings">
     <div class="current-booking" *ngFor="let house of currentBookings"
     >
@@ -25,15 +25,16 @@
             <small><strong>{{house.price}}€</strong></small>
           </div>
           <div>
-            ☆ {{house.rating}}
+            <fa-icon [icon]="faStar"></fa-icon>
+            {{house.rating}}
           </div>
         </div>
       </div>
     </div>
   </div>
-  <h3>
+  <h2>
     Reservas Passadas
-  </h3>
+  </h2>
   <div *ngIf="pastBookings">
     <div class="current-booking" *ngFor="let house of pastBookings"
     >
@@ -51,7 +52,8 @@
             <small><strong>{{house.price}}€</strong></small>
           </div>
           <div>
-            ☆ {{house.rating}}
+            <fa-icon [icon]="faStar"></fa-icon>
+            {{house.rating}}
           </div>
         </div>
       </div>
