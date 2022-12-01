@@ -17,7 +17,6 @@ export class HousesComponent {
   ngOnInit(): void {
     this.upBnbService.getHouses().subscribe((houses: HousesData) => {
       this.houses = houses.data; //the object is a list of houses
-      console.log(this.houses);
     })
 
 
