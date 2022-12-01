@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
+
 import {UpBnbService} from "../up-bnb.service";
 
 
@@ -12,6 +14,7 @@ import {UpBnbService} from "../up-bnb.service";
 export class HouseComponent {
   faHeart = faHeart;
   faHeartSolid = faHeartSolid;
+  faStar = faStar;
 
   constructor(public upBnbService: UpBnbService) {
   }
