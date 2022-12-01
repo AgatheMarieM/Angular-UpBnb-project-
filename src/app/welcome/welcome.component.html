@@ -31,12 +31,30 @@
       </div>
     </div>
   </div>
-
-
-  <h5>
+  <h3>
     Reservas Passadas
-  </h5>
-  <div>
-
+  </h3>
+  <div *ngIf="pastBookings">
+    <div class="current-booking" *ngFor="let house of pastBookings"
+    >
+      <div class="house-container">
+        <div class="house-image">
+          <img src="{{house.featured_photo}}" alt="house-img"/>
+          <div class="heart-icon" (click)="upBnbService.toggleFavorite(house.id)">
+            <fa-icon [icon]="upBnbService.isFavorite(house.id) ? faHeartSolid : faHeart"></fa-icon>
+          </div>
+        </div>
+        <div class="house-details">
+          <div class="house-details-text">
+            <h5>{{house.city}}, {{house.country}}</h5>
+            <small>{{house.time}}</small>
+            <small><strong>{{house.price}}€</strong></small>
+          </div>
+          <div>
+            ☆ {{house.rating}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
