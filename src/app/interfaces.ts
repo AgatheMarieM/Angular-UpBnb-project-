@@ -16,7 +16,8 @@ interface House {
   rating: number,
   price: number,
   host_type: string,
-  featured_photo: string
+  featured_photo: string,
+  time: string
 }
 
 export {House};
