@@ -1,15 +1,17 @@
-<div class="house-container" >
-  <div class="house-image" >
-    <a [routerLink]="['/details', id]" >
-      <img src="{{image}}" alt="house-img"/>
+<div class="house-container">
+  <div *ngIf="image">
+    <a [routerLink]="['/details', id]">
+      <div class="house-image" style="background-image: url({{ image }})">
+        <div class="heart-icon" (click)="upBnbService.toggleFavorite(id)">
+          <fa-icon [icon]="upBnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>
+        </div>
+      </div>
     </a>
-    <div class="heart-icon" (click)="upBnbService.toggleFavorite(id)">
-      <fa-icon [icon]="upBnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>
-    </div>
   </div>
+
   <div class="house-details">
     <div class="house-details-text">
-      <h5 >{{city}}, {{country}}</h5>
+      <h5>{{city}}, {{country}}</h5>
       <small>{{host}}</small>
       <small><strong>{{price}}€</strong> noite</small>
     </div>
