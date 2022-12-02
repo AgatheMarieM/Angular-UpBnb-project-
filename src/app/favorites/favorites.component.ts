@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
 import {UpBnbService} from "../up-bnb.service";
 import {House, HousesData} from "../interfaces";
-
+import {faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
+import {faHeart} from '@fortawesome/free-regular-svg-icons';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-favorites',
@@ -9,16 +11,17 @@ import {House, HousesData} from "../interfaces";
   styleUrls: ['./favorites.component.scss']
 })
 export class FavoritesComponent {
+  faHeart = faHeart;
+  faHeartSolid = faHeartSolid;
+  faStar = faStar;
 
   constructor(public upBnbService: UpBnbService) {
   }
 
   favHouses?: House[] = []; //use interface house, empty array at first
-  favHousesByCountry?: {
-    [index: string]: House[]
+  favHousesByCountry: {
+    [key: string]: House[]
   } = {};
-
-  // keysArray?: string[] = [];
 
 
   ngOnInit(): void {
@@ -31,20 +34,17 @@ export class FavoritesComponent {
           if (this.favHousesByCountry) {
             if (!this.favHousesByCountry[favHouse.country]) {
               this.favHousesByCountry[favHouse.country] = [];
-              this.favHousesByCountry[favHouse.country].push(favHouse)
-            } else {
-              this.favHousesByCountry[favHouse.country].push(favHouse)
             }
+            this.favHousesByCountry[favHouse.country].push(favHouse)
           }
         }
       )
-      console.log(this.favHousesByCountry);
-      //@ts-ignore
-
-/*
-      console.log(Object.keys(this.favHousesByCountry));
-*/
+  /*    console.log(this.favHousesByCountry);
+      console.log(typeof this.favHousesByCountry);*/
     })
-
   }
+   getObject() {
+    return Object.keys(this.favHousesByCountry);
+  }
+
 }
