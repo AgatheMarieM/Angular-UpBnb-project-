@@ -1,36 +1,46 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
-import {HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews} from "../interfaces";
+import {Features, HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews} from "../interfaces";
+import {faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
+import {faHeart} from '@fortawesome/free-regular-svg-icons';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 import {faDog} from '@fortawesome/free-solid-svg-icons';
 import {faAirFreshener} from '@fortawesome/free-solid-svg-icons';
 import {faWifi} from '@fortawesome/free-solid-svg-icons';
 import {faTv} from "@fortawesome/free-solid-svg-icons/faTv";
 import {faSmoking} from '@fortawesome/free-solid-svg-icons';
-
-/*import {faWashingMachine} from '@fortawesome/free-solid-svg-icons';
-import {faFireplace} from '@fortawesome/free-solid-svg-icons';
-import {faMicrowave} from '@fortawesome/free-solid-svg-icons';*/
+import {faKitchenSet} from "@fortawesome/free-solid-svg-icons";
+import {faSink} from "@fortawesome/free-solid-svg-icons";
+import {faFire} from "@fortawesome/free-solid-svg-icons";
 
 
 @Component({
   selector: 'app-details',
-
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
+  faStar = faStar
+  faHeart = faHeart;
+  faHeartSolid = faHeartSolid;
   faDog = faDog;
   faAirFreshener = faAirFreshener;
   faTv = faTv;
   faSmoking = faSmoking;
   faWifi = faWifi;
-  /*
-    faWashingMachine = faWashingMachine;
-    faFireplace = faFireplace;
-    faMicrowave = faMicrowave;
-  */
+  faKitchenSet = faKitchenSet;
 
+  icons?: any = {
+    smokingAllowed: faSmoking,
+    washingMachine: faSink,
+    airConditioner: faAirFreshener,
+    fireplace: faFire,
+    tv: faTv,
+    petsAllowed: faDog,
+    wifi: faWifi,
+    microwave: faKitchenSet
+  }
 
   id: number;
   details?: HouseDetails;
