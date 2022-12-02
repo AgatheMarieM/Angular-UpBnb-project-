@@ -24,17 +24,11 @@
     <!--    {{features}}-->
   </div>
 
-  <div *ngIf="features && features.includes('petsAllowed')">
-    <fa-icon [icon]="faDog"></fa-icon>
-  </div>
-  <div *ngIf="features && features.includes('airConditioner')">
-    <fa-icon [icon]="faAirFreshener"></fa-icon>
-  </div>
-  <div *ngIf="features && features.includes('tv')">
-    <fa-icon [icon]="faTv"></fa-icon>
-  </div>
-  <div *ngIf="features && features.includes('smokingAllowed')">
-    <fa-icon [icon]="faSmoking"></fa-icon>
+
+  <div *ngIf="features">
+    <div *ngFor="let houseFeature of features">
+      <fa-icon [icon]="icons[houseFeature]"></fa-icon>
+    </div>
   </div>
 
   <h4>Sobre o anfitrião</h4>
