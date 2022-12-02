@@ -1,1 +1,31 @@
-<p>favorites works!</p>
+<h1>Favoritos</h1>
+<div class="favorites-container" *ngIf="favHousesByCountry">
+<!--  first loop: iteration through countries-->
+    <div class="favorites-country" *ngFor="let country of getObject()">
+      <h2>{{country}}</h2>
+<!--  second loop: iterating through fav houses of this country-->
+      <div class="favorite-house" *ngFor="let house of favHousesByCountry[country]">
+        <div class="image-container">
+          <div class="favorite-image" style="background-image: url({{ house.featured_photo }})">
+            <div class="heart-icon" (click)="upBnbService.toggleFavorite(house.id)">
+              <fa-icon [icon]="upBnbService.isFavorite(house.id) ? faHeartSolid : faHeart"></fa-icon>
+            </div>
+          </div>
+        </div>
+        <div class="favorite-details">
+          <p>
+            {{house.city}}
+          </p>
+          <small>
+            Anfitrião {{house.host_type}}
+          </small>
+          <p>
+            {{house.price}}€ noite
+          </p>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <small> {{house.rating}}</small>
+        </div>
+      </div>
+    </div>
+</div>
+
