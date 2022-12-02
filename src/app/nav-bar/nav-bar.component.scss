@@ -20,11 +20,11 @@
     right: 0;  }
 
   .button{
-    flex: 1;
+    flex: 1;  //means that it occupies all available space in its container
     text-align: center;
     padding: 9px;
 
-    &:hover{
+    &:hover {//& means when compiling no space will be added between parents a
       background-color: #004F63;
       fa-icon {
         color: white;
