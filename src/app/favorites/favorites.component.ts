@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 import {UpBnbService} from "../up-bnb.service";
 import {House, HousesData} from "../interfaces";
-import {faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
+import {faHeart as faHeartSolid, faStar} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
-import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-favorites',
@@ -14,6 +13,9 @@ export class FavoritesComponent {
   faHeart = faHeart;
   faHeartSolid = faHeartSolid;
   faStar = faStar;
+  noite?: string = "noite";
+  anfitriao?: string = "Anfitrião";
+
 
   constructor(public upBnbService: UpBnbService) {
   }
