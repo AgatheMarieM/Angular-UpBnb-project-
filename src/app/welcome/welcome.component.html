@@ -9,30 +9,30 @@
   <h2 class="subsection-title">
     As minhas reservas
   </h2>
-<!--  my current bookings-->
+  <!--  my current bookings-->
   <div class="current-bookings" *ngIf="currentBookings">
-    <app-house class="house-container" *ngFor="let house of currentBookings"
-               [image]= "house.featured_photo"
-               [city]= "house.city"
-               [country]= "house.country"
-               [subtitle]= "house.time"
-               [price]= "house.price"
-               [stars]= "house.rating"
+    <app-house *ngFor="let house of currentBookings"
+               [image]="house.featured_photo"
+               [city]="house.city"
+               [country]="house.country"
+               [subtitle]="house.time"
+               [price]="house.price"
+               [stars]="house.rating"
                [id]="house.id">
     </app-house>
   </div>
   <h2 class="subsection-title">
     Reservas Passadas
   </h2>
-  <div class="current-bookings" *ngIf="pastBookings">
-    <app-house class="house-container" *ngFor="let house of pastBookings"
-               [image]= "house.featured_photo"
-               [city]= "house.city"
-               [country]= "house.country"
-               [subtitle]= "house.time"
-               [price]= "house.price"
-               [stars]= "house.rating"
-               [id]="house.id">
-    </app-house>
+  <div class="past-bookings" *ngIf="pastBookings">
+      <app-house *ngFor="let house of pastBookings"
+                 [image]="house.featured_photo"
+                 [city]="house.city"
+                 [country]="house.country"
+                 [subtitle]="house.time"
+                 [price]="house.price"
+                 [stars]="house.rating"
+                 [id]="house.id">
+      </app-house>
   </div>
 </div>
