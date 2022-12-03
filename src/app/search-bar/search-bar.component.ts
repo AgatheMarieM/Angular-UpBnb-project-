@@ -14,19 +14,11 @@ export class SearchBarComponent {
   constructor(private upBnbService: UpBnbService) {
   }
 
-  getInput(event: any){
-    console.log(event.target.value);
+  getInput(event: any) {
     this.upBnbService.getSearchResult(event.target.value).subscribe((houses: HousesData) => {
         this.houseResults = houses.data;
       }
     )
   }
-
-/*  ngOnInit(): void {
-    this.upBnbService.getHouses().subscribe((houses: HousesData) => {
-        this.houseResults = houses.data;
-      }
-    )
-  }*/
-
 }
+
