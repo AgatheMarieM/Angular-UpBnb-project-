@@ -1,24 +1,23 @@
-<div class="house-container">
-  <div *ngIf="image">
-    <a [routerLink]="['/details', id]">
-      <div class="house-image" style="background-image: url({{ image }})">
-        <div class="heart-icon" (click)="upBnbService.toggleFavorite(id)">
-          <fa-icon [icon]="upBnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>
+  <div class="house-container">
+    <div *ngIf="image">
+        <div class="house-image" [routerLink]="['/details', id]" style="background-image: url({{ image }})">
+          <div class="heart-icon" (click)="upBnbService.toggleFavorite(id)">
+            <fa-icon [icon]="upBnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>
+          </div>
         </div>
+    </div>
+
+    <div class="house-details">
+      <div class="house-details-text">
+        <p>{{city}}, {{country}}</p>
+        <small>{{anfitriao}} {{subtitle}}</small>
+        <small><strong>{{price}}€</strong> {{noite}}</small>
       </div>
-    </a>
+      <div>
+        <fa-icon [icon]="faStar"></fa-icon>
+        {{stars}}
+      </div>
+    </div>
   </div>
 
-  <div class="house-details">
-    <div class="house-details-text">
-      <h5>{{city}}, {{country}}</h5>
-      <small>{{subtitle}}</small>
-      <small><strong>{{price}}€</strong> noite</small>
-    </div>
-    <div>
-      <fa-icon [icon]="faStar"></fa-icon>
-      {{stars}}
-    </div>
-  </div>
-</div>
 
