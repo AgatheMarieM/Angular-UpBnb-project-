@@ -1,29 +1,24 @@
-
 .welcome-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  margin: 10px 5px;
+  margin: 0 auto;
+  max-width: 900px;
 
   h1 {
     margin: 0;
   }
 
-  .house-image {
-    position: relative;
+  .subsection-title {
+    margin-top: 20px;
+  }
+  .current-bookings, .past-bookings {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-evenly;
 
-    img {
-      border-radius: 4px;
-    }
-
-    .heart-icon {
-      position: absolute;
-      top: 10px;
-      right: 9px;
-      cursor: pointer;
-      color: white;
-
+    app-house {
+      width: 46%;
     }
   }
 }
