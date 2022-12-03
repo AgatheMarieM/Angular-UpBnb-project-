@@ -1,16 +1,17 @@
 .house-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin: 10px 5px;
+  width: 100%;
+  margin-top: 20px;
+
 
   .house-image {
     position: relative;
-    border-radius: 4px;
+    border-radius: 10px;
     background-size: cover;
+    background-position: center;
     width: 100%;
-    padding-bottom: 57%;
+    padding-bottom: 71%;
 
     .heart-icon {
       position: absolute;
@@ -29,8 +30,7 @@
     align-items: center;
 
     .house-details-text {
-      h5 {
-        display: block;
+      p {
         margin: 0;
         padding: 0;
       }
@@ -41,8 +41,6 @@
         padding: 0;
       }
     }
-
-
   }
 
 }
