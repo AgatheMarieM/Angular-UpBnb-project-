@@ -13,6 +13,7 @@ import { DetailsComponent } from './details/details.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { MoreResultsComponent } from './more-results/more-results.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     DetailsComponent,
     WelcomeComponent,
     FavoritesComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MoreResultsComponent
   ],
   imports: [
     BrowserModule,
