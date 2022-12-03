@@ -1,0 +1,9 @@
+p {
+  color: #004F63;
+  text-decoration: underline;
+  margin-top: 20px;
+  &:hover {
+    cursor: pointer;
+    color: #ec31e2;
+  }
+}
