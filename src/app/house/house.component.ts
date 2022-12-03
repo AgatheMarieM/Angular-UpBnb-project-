@@ -26,4 +26,8 @@ export class HouseComponent {
   @Input() subtitle!: string;
   @Input() price!: number;
   @Input() stars?: number;
+  @Input() noite?: string;
+  @Input() anfitriao?: string;
+
+
 }
