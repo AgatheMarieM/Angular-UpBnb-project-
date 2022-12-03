@@ -12,6 +12,7 @@ export class HousesComponent {
   constructor(private upBnbService: UpBnbService) {
   }
 
+  noite?: string = "noite";
   houses?: House[] = []; //list of houses is at first an empty list
 
   ngOnInit(): void {
