@@ -1,0 +1,21 @@
+.person-presentation {
+  display: flex;
+  flex-direction: row;
+
+  .person-photo {
+    width: 25%;
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  .person-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+    p {
+      margin: 2px;
+    }
+  }
+}
