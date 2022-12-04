@@ -11,11 +11,46 @@
   }
 
   .subsection-title {
-    margin: 25px 0 5px;
+    margin: 25px 0 0;
   }
+
+  .price-header {
+    margin-top: 15px;
+  }
+
+  small.house-description {
+    line-height: 20px;
+  }
+
+  .house-features {
+    margin: 30px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+
+    fa-icon {
+      flex: 1;
+      color: white;
+      background-color: #cdcdcd;
+      border-radius: 8px;
+      margin-right: 5px;
+      padding: 8px;
+      width: 100%;
+
+      &.active {
+        background-color: #004F63;
+      }
+    }
+
+    .active-features, .inactive-features {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
 
   .house-image {
     position: relative;
+    margin-top: 20px;
 
     img {
       border-radius: 10px;
@@ -32,6 +67,7 @@
   }
 
   .house-gallery {
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
