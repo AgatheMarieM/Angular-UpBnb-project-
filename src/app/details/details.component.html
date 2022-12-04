@@ -1,77 +1,66 @@
+<!-- API: Detalhes da casa -->
 <div class="details-container" *ngIf="details"> <!-- condition because "object is possibly undefined" (can be null) -->
   <h1>
     {{details.title}}
   </h1>
-  <h4>
+  <h3>
     <fa-icon [icon]="faStar"></fa-icon>
     {{details.rating}} - {{details.city}}, {{details.country}}
-  </h4>
-
+  </h3>
   <div class="house-image">
-  <img [src]="details.featured_photo" alt="house-photo"/>
-  <div class="heart-icon" (click)="this.UpBnbService.toggleFavorite(details.id)">
-    <fa-icon [icon]="this.UpBnbService.isFavorite(details.id) ? faHeartSolid : faHeart"></fa-icon>
-  </div>
-  </div>
-  <h5>
-    {{details.price}}€ noite
-  </h5>
-  <p>
-    {{details.description}}
-  </p>
-  <div class="details-features">
-
-    <!--    {{features}}-->
-  </div>
-
-
-  <div *ngIf="features">
-    <div *ngFor="let houseFeature of features">
-      <fa-icon [icon]="icons[houseFeature]"></fa-icon>
+    <img [src]="details.featured_photo" alt="house-photo"/>
+    <div class="heart-icon" (click)="this.UpBnbService.toggleFavorite(details.id)">
+      <fa-icon [icon]="this.UpBnbService.isFavorite(details.id) ? faHeartSolid : faHeart"></fa-icon>
     </div>
   </div>
-
-  <h4>Sobre o anfitrião</h4>
+  <h3 class="price-header">
+    <strong>{{details.price}}€</strong> noite
+  </h3>
+  <small class="house-description">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mauris purus, mattis et egestas sit amet,
+    tristique id ligula.
+    Donec ornare massa quis justo venenatis, nec auctor leo ultrices.
+    Cras molestie, nunc a convallis fringilla, sem lacus convallis arcu, quis egestas diam odio in sem.
+    Pellentesque viverra eros nec porttitor convallis. Curabitur id mauris non lorem blandit ullamcorper.
+  </small>
+  <!-- API: Regras da casa -->
+  <div class="house-features" *ngIf="features">
+    <!--    Active features-->
+    <div class="active-features">
+      <div *ngFor="let activeFeature of activeFeatures">
+        <fa-icon [ngClass]=activeFeatureClass [icon]="icons[activeFeature]"></fa-icon>
+      </div>
+    </div>
+    <!--    Inactive features-->
+    <div class="inactive-features">
+      <div *ngFor="let inactiveFeature of inactiveFeatures">
+        <fa-icon [icon]="icons[inactiveFeature]"></fa-icon>
+      </div>
+    </div>
+  </div>
   <!-- API: Anfitriao da casa -->
-  <div class="host-presentation" *ngIf="host"> <!-- condition because "object is possibly undefined" (can be null) -->
-    <div class="host-portrait">
-      <img [src]="host.photo" alt="host-photo">
-    </div>
-    <div class="host-name">
-      {{host.name}}
-    </div>
-    <div class="host-rating">
-      ☆{{host.rating}}
+  <h4 class="subsection-title">Sobre o anfitrião</h4>
+  <div *ngIf="host">
+    <app-person-card
+      [photo]="host.photo"
+      [name]="host.name"
+      [subtitle]="host.rating"
+    ></app-person-card>
+  </div>
+  <!-- API: Fotografias da casa -->
+  <h4 class="subsection-title">Galeria</h4>
+  <div *ngIf="photos" class="house-gallery">
+    <div class="house-photo" *ngFor="let photo of photos" style="background-image: url({{ photo }})">
     </div>
   </div>
-
-  <h4>Galeria</h4>  <!-- API: Fotos da casa -->
-  <div class="house-gallery" *ngIf="photos" > <!-- condition because "object is possibly undefined" (can be null) -->
-    <div *ngFor="let photo of photos">
-      <img [src]="photo" alt="house-photos"/>
-    </div>
-  </div>
-
-  <h4>Comentários</h4>  <!-- API: Fotos da casa -->
   <!-- API: Comentarios da casa -->
+  <h4 class="subsection-title">Comentários</h4>
   <div *ngIf="reviews">
-    <div class="house-commentaries" *ngFor="let review of reviews.reviews">
-      <div class="reviewer-portrait">
-        <img [src]="review.photo" alt="portrait"/>
-      </div>
-      <div class="review-details">
-        <h5>
-          {{review.name}}
-        </h5>
-        <p>
-          {{review.date}}
-        </p>
-      </div>
-      <p class="review-comment">
-        {{review.comment}}
-      </p>
-    </div>
+    <app-person-card *ngFor="let review of reviews.reviews"
+                     [photo]="review.photo"
+                     [name]="review.name"
+                     [subtitle]="review.date"
+                     [text]="review.comment"
+    ></app-person-card>
   </div>
-
-
 </div>
