@@ -1,13 +1,13 @@
 .houses-container {
-  display: grid;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
   max-width: 900px;
+  justify-content: space-evenly;
 
-}
-@media (min-width: 500px) {
-  .houses-container { grid-template-columns: repeat(3, 1fr); }
-}
 
-@media (min-width: 100px) {
-  .houses-container { grid-template-columns: repeat(2, 1fr); }
+  app-house {
+    width: 46%;
+  }
+
 }
