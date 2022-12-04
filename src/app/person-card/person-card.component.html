@@ -1,16 +1,20 @@
-<div class="person-presentation">
-  <div class="person-photo">
-    <img [src]="photo" alt="person-photo">
+<div class="person-container">
+  <div class="person-presentation">
+    <div class="person-photo">
+      <img [src]="photo" alt="person-photo">
+    </div>
+    <div class="person-details">
+      <p class="person-name">
+        {{name}}
+      </p>
+      <small class="person-rating">
+        <fa-icon [icon]="faStar"></fa-icon>
+        {{subtitle}}
+      </small>
+    </div>
   </div>
-  <div class="person-details">
-    <p class="person-name">
-      {{name}}
-    </p>
-    <small class="person-rating">
-      <fa-icon [icon]="faStar"></fa-icon>
-      {{subtitle}}
-    </small>
-  </div>
+  <small class="person-text">
+    {{text}}
+  </small>
 </div>
-<div>{{text}}</div>
 
