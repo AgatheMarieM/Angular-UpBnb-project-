@@ -9,11 +9,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 5%;
+  height: 8%;
+
+  fa-icon {
+    font-size: 1.8em;
+    color: #004F63;
+  }
 
   img {
     position: fixed;
-    height: 56px;
+    height: 70px;
     bottom: 0;
     margin: 0 auto;
     left: 0;
@@ -22,7 +27,7 @@
   .button{
     flex: 1;  //means that it occupies all available space in its container
     text-align: center;
-    padding: 9px;
+    padding: 13px;
 
     &:hover {//& means when compiling no space will be added between parents a
       background-color: #004F63;
