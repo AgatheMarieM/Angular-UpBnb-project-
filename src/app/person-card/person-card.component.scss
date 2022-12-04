@@ -1,9 +1,11 @@
 .person-presentation {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
 
   .person-photo {
-    width: 25%;
+    width: 20%;
+
     img {
       border-radius: 100%;
     }
@@ -14,8 +16,13 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 15px;
+
     p {
       margin: 2px;
     }
+  }
+
+  small {
+    margin: 2px 0;
   }
 }
