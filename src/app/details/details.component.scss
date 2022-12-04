@@ -1,20 +1,24 @@
-
 .details-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
   margin: 10px 5px;
+  padding-bottom: 40px;
 
   h1 {
     margin: 0;
+  }
+
+  .subsection-title {
+    margin: 25px 0 5px;
   }
 
   .house-image {
     position: relative;
 
     img {
-      border-radius: 4px;
+      border-radius: 10px;
     }
 
     .heart-icon {
@@ -24,6 +28,22 @@
       cursor: pointer;
       color: white;
 
+    }
+  }
+
+  .house-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .house-photo {
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      width: 45%;
+      padding-bottom: 31%;
+      margin: 5px;
     }
   }
 }
