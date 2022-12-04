@@ -1,18 +1,9 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
-import {Features, HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews} from "../interfaces";
-import {faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
+import {HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews} from "../interfaces";
+import {faHeart as faHeartSolid, faStar, faDog, faAirFreshener,faWifi, faTv, faSmoking, faKitchenSet, faSink, faFire} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
-import {faStar} from '@fortawesome/free-solid-svg-icons';
-import {faDog} from '@fortawesome/free-solid-svg-icons';
-import {faAirFreshener} from '@fortawesome/free-solid-svg-icons';
-import {faWifi} from '@fortawesome/free-solid-svg-icons';
-import {faTv} from "@fortawesome/free-solid-svg-icons/faTv";
-import {faSmoking} from '@fortawesome/free-solid-svg-icons';
-import {faKitchenSet} from "@fortawesome/free-solid-svg-icons";
-import {faSink} from "@fortawesome/free-solid-svg-icons";
-import {faFire} from "@fortawesome/free-solid-svg-icons";
 
 
 @Component({
@@ -65,13 +56,6 @@ export class DetailsComponent {
     )
     this.UpBnbService.getHouseHost(this.id).subscribe((host) => {
         this.host = host;
-        console.log(this.host);
-      }
-    )
-
-    this.UpBnbService.getHouseHost(this.id).subscribe((host) => {
-        this.host = host;
-        console.log(this.host);
       }
     )
 
