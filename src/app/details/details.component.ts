@@ -2,7 +2,18 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
 import {HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews} from "../interfaces";
-import {faHeart as faHeartSolid, faStar, faDog, faAirFreshener,faWifi, faTv, faSmoking, faKitchenSet, faSink, faFire} from '@fortawesome/free-solid-svg-icons';
+import {
+  faHeart as faHeartSolid,
+  faStar,
+  faDog,
+  faAirFreshener,
+  faWifi,
+  faTv,
+  faSmoking,
+  faKitchenSet,
+  faSink,
+  faFire
+} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
 
 
@@ -11,6 +22,7 @@ import {faHeart} from '@fortawesome/free-regular-svg-icons';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
+
 export class DetailsComponent {
   faStar = faStar
   faHeart = faHeart;
@@ -40,6 +52,9 @@ export class DetailsComponent {
   photos?: string[] = [];
   reviews?: HouseReviews;
 
+  activeFeatures: string[] = [];
+  inactiveFeatures: string[] = [];
+  activeFeatureClass?: string = "active";
 
   constructor(private route: ActivatedRoute, public UpBnbService: UpBnbService) {
     this.id = route.snapshot.params['id']; //this.id: referencia à uma propriedade dele proprio
@@ -52,8 +67,17 @@ export class DetailsComponent {
     )
     this.UpBnbService.getFeatures(this.id).subscribe((features: HouseFeatures) => {
         this.features = features.features;
+        let allFeatures = Object.keys(this.icons);
+        for (let i = 0; i < allFeatures.length; i++) {
+          if (this.features.includes(allFeatures[i])) {
+            this.activeFeatures.push(allFeatures[i]);
+          } else {
+            this.inactiveFeatures.push(allFeatures[i]);
+          }
+        }
       }
-    )
+    );
+
     this.UpBnbService.getHouseHost(this.id).subscribe((host) => {
         this.host = host;
       }
