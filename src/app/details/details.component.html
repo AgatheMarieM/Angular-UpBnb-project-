@@ -44,7 +44,7 @@
     <app-person-card
       [photo]="host.photo"
       [name]="host.name"
-      [subtitle]="host.rating"
+      [rating]="host.rating"
     ></app-person-card>
   </div>
   <!-- API: Fotografias da casa -->
@@ -59,7 +59,7 @@
     <app-person-card *ngFor="let review of reviews.reviews"
                      [photo]="review.photo"
                      [name]="review.name"
-                     [subtitle]="review.date"
+                     [date]="review.date"
                      [text]="review.comment"
     ></app-person-card>
   </div>
