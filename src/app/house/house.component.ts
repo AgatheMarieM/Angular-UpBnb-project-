@@ -23,10 +23,12 @@ export class HouseComponent {
   @Input() city!: string;
   @Input() country!: string;
   @Input() host!: string;
-  @Input() price!: number;
+  @Input() price?: number;
+  @Input() booking_price?: number;
   @Input() stars?: number;
   @Input() type?: string;
   @Input() time?: string;
+
 
   types_host: {
     [key: string]: string
