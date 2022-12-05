@@ -32,8 +32,9 @@
       color: white;
       background-color: #cdcdcd;
       border-radius: 8px;
-      margin-right: 5px;
-      padding: 8px;
+      font-size: 1.3em;
+      margin-right: 8px;
+      padding: 10px;
       width: 100%;
 
       &.active {
@@ -44,6 +45,10 @@
     .active-features, .inactive-features {
       display: flex;
       flex-direction: row;
+    }
+
+    .inactive-features {
+      margin-top: 35px;
     }
   }
 
@@ -62,7 +67,6 @@
       right: 9px;
       cursor: pointer;
       color: white;
-
     }
   }
 
