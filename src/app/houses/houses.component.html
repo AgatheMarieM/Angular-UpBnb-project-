@@ -1,6 +1,6 @@
 <div class="houses-container">
   <div class="search-container">
-    <input type="text" ngModel (ngModelChange)="getInput($event)" placeholder="Search for...">
+    <input class="input" type="text" ngModel (ngModelChange)="getInput($event)" placeholder="Procurar...">
   </div>
   <div class="houses-results-container">
     <app-house *ngFor="let house of houses"
