@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
-import {UpBnbService} from "../up-bnb.service";
 
 @Component({
   selector: 'app-person-card',
@@ -9,12 +8,9 @@ import {UpBnbService} from "../up-bnb.service";
 })
 export class PersonCardComponent {
   faStar = faStar;
-
-  constructor(public upBnbService: UpBnbService) {
-  }
-
   @Input() photo!: string;
   @Input() name!: string;
-  @Input() subtitle!: number | string;
+  @Input() rating?: number;
   @Input() text?: string;
+  @Input() date?: string;
 }
