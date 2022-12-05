@@ -41,8 +41,6 @@ export class FavoritesComponent {
           }
         }
       )
-  /*    console.log(this.favHousesByCountry);
-      console.log(typeof this.favHousesByCountry);*/
     })
   }
    getObject() {
