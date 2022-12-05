@@ -12,9 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { DetailsComponent } from './details/details.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FavoritesComponent } from './favorites/favorites.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { MoreResultsComponent } from './more-results/more-results.component';
 import { PersonCardComponent } from './person-card/person-card.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,16 +24,15 @@ import { PersonCardComponent } from './person-card/person-card.component';
     DetailsComponent,
     WelcomeComponent,
     FavoritesComponent,
-    SearchBarComponent,
-    MoreResultsComponent,
     PersonCardComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FontAwesomeModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FontAwesomeModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
