@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UpBnbService} from "../up-bnb.service";
 import {HouseDetails, HouseFeatures, HouseHost, HousePhotos, HouseReviews} from "../interfaces";
@@ -23,16 +23,10 @@ import {faHeart} from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./details.component.scss']
 })
 
-export class DetailsComponent {
+export class DetailsComponent implements OnInit {
   faStar = faStar
   faHeart = faHeart;
   faHeartSolid = faHeartSolid;
-  faDog = faDog;
-  faAirFreshener = faAirFreshener;
-  faTv = faTv;
-  faSmoking = faSmoking;
-  faWifi = faWifi;
-  faKitchenSet = faKitchenSet;
 
   icons?: any = {
     smokingAllowed: faSmoking,
@@ -90,8 +84,5 @@ export class DetailsComponent {
     this.UpBnbService.getHouseReviews(this.id).subscribe((reviews) => {
       this.reviews = reviews;
     })
-
   }
-
-
 }
