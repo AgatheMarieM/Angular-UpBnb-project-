@@ -11,7 +11,15 @@
     margin-top: 20px;
 
     .house-image {
-      width: 150px;
+      width: 170px;
+    }
+
+    .house-details {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: 0 0 0 16px;
+      justify-content: center;
     }
   }
 
@@ -60,7 +68,7 @@
         margin: 4px 0;
         padding: 0;
         font-weight: 300;
-        font-size: 0.70em;
+        font-size: 0.75em;
       }
     }
 
