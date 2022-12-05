@@ -11,7 +11,7 @@
     <div class="house-details-text">
       <p>{{city}}<span *ngIf="country">, {{country}}</span></p>
       <small>{{types_host[host] || time }}</small>
-      <small *ngIf="price"><strong>{{price}}€</strong> noite</small>
+      <small ><strong>{{price || booking_price  }}€</strong> <span *ngIf="price"> noite</span></small>
     </div>
     <div class="house-rating">
       <fa-icon [icon]="faStar"></fa-icon>
