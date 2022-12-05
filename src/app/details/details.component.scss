@@ -11,7 +11,7 @@
   }
 
   .subsection-title {
-    margin: 25px 0 0;
+    margin: 45px 0 0;
   }
 
   .price-header {
@@ -20,6 +20,8 @@
 
   small.house-description {
     line-height: 20px;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .house-features {
