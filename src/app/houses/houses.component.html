@@ -1,16 +1,19 @@
-<app-search-bar></app-search-bar>
 <div class="houses-container">
-  <app-house *ngFor="let house of houses"
-             [image]= "house.featured_photo"
-             [city]= "house.city"
-             [country]= "house.country"
-             [host]= "house.host_type"
-             [price]= "house.price"
-             [stars]= "house.rating"
-             [noite]= "noite"
-             [id]="house.id"
-  >
-  </app-house>
-  <app-more-results></app-more-results>
+  <div class="search-container">
+    <input type="text" ngModel (ngModelChange)="getInput($event)" placeholder="Search for...">
+  </div>
+  <div class="houses-results-container">
+    <app-house *ngFor="let house of houses"
+               [image]="house.featured_photo"
+               [city]="house.city"
+               [country]="house.country"
+               [host]="house.host_type"
+               [price]="house.price"
+               [stars]="house.rating"
+               [id]="house.id"
+    >
+    </app-house>
+  </div>
+  <p id="more-results-button" (click)="getMoreResults()">Mais resultados</p>
 </div>
 
