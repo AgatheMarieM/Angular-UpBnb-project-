@@ -1,4 +1,3 @@
-
 .house-container {
   display: flex;
   flex-direction: column;
@@ -14,44 +13,6 @@
     .house-image {
       width: 150px;
     }
-
-    .house-details {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: flex-start;
-      margin: 10px 0 0 20px;
-
-      .house-details-text {
-        width: 75%;
-
-        p {
-          margin: 0;
-          padding: 0;
-          font-size: 0.8em;
-        }
-
-        small {
-          display: block;
-          margin: 4px 0;
-          padding: 0;
-          font-weight: 300;
-          font-size: 0.75em;
-        }
-      }
-
-      .house-rating {
-        font-size: 0.7em;
-        display: inline;
-
-        fa-icon {
-          font-size: 0.7em;
-        }
-      }
-    }
-
-
-
   }
 
   .house-image {
@@ -78,6 +39,12 @@
     justify-content: space-evenly;
     align-items: flex-start;
     margin-top: 10px;
+    padding: 5px;
+
+    &:hover {
+      background-color: rgba(248, 248, 93, 0.56);
+      border-radius: 5px;
+    }
 
     .house-details-text {
       width: 75%;
@@ -93,7 +60,7 @@
         margin: 4px 0;
         padding: 0;
         font-weight: 300;
-        font-size: 0.75em;
+        font-size: 0.70em;
       }
     }
 
@@ -106,6 +73,4 @@
       }
     }
   }
-
-
 }
