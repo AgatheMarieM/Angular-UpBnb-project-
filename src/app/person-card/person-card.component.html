@@ -8,8 +8,8 @@
         {{name}}
       </p>
       <small class="person-rating">
-        <fa-icon [icon]="faStar"></fa-icon>
-        {{subtitle}}
+        <span *ngIf="rating"><fa-icon [icon]="faStar"></fa-icon></span>
+        {{rating || date}}
       </small>
     </div>
   </div>
