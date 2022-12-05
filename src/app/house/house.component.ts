@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
+import {faStar, faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
-import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 import {UpBnbService} from "../up-bnb.service";
 
@@ -23,12 +22,17 @@ export class HouseComponent {
   @Input() image!: string;
   @Input() city!: string;
   @Input() country!: string;
-  @Input() subtitle!: string;
+  @Input() host!: string;
   @Input() price!: number;
   @Input() stars?: number;
   @Input() noite?: string;
-  @Input() anfitriao?: string = "Anfitrião";
   @Input() type?: string;
+  @Input() time?: string;
 
-
+  types_host: {
+    [key: string]: string
+  } = {
+    professional: "Anfitrião profissional",
+    individual: "Anfitrião individual"
+  }
 }
