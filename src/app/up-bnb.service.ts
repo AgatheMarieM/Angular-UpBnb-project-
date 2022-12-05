@@ -15,12 +15,8 @@ export class UpBnbService {
   constructor(public http: HttpClient) {
   }
 
-  getSearchResult(input: string) {
-    return this.http.get<HousesData>(BASE_URL + "/casas?search=" + input);
-  }
-
-  getHouses() {
-    return this.http.get<HousesData>(BASE_URL + "/casas");
+  getSearchResult(input: string, i: number) {
+    return this.http.get<HousesData>(BASE_URL + "/casas?search=" + input + '&page=' + i);
   }
 
   //Managing favorites:
@@ -40,20 +36,14 @@ export class UpBnbService {
     localStorage.setItem("favorites", JSON.stringify(this.favorites));//setting favorites item in the localStorage
   }
 
-  getFavorites() {
-    return this.favorites;
-  }
-
   getFavoriteHouses() {
     return this.http.get<HousesData>(BASE_URL + "/casas?ids=" + this.favorites.join());
   }
 
-
+//Managing Details
   getDetails(id: number) {
     return this.http.get<HouseDetails>(BASE_URL + "/casas/" + id); //take off the  ":" from Postman
   }
-
-  //HouseDetails is not a list! <HouseDetails[]> not needed, no "casting"!
 
   getFeatures(id: number) {
     return this.http.get<HouseFeatures>(BASE_URL + "/casas/" + id + "/features");
@@ -71,15 +61,12 @@ export class UpBnbService {
     return this.http.get<HouseReviews>(BASE_URL + "/casas/" + id + "/reviews");
   }
 
-  getCurrentBookings(){
+  //Managing bookings (welcome component, which is default landing page)
+  getCurrentBookings() {
     return this.http.get<HousesData>(BASE_URL + "/casas/current");
   }
 
-  getPastBookings(){
+  getPastBookings() {
     return this.http.get<HousesData>(BASE_URL + "/casas/past");
   }
-
-
-
-
 }
