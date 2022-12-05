@@ -1,13 +1,40 @@
 .houses-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
   max-width: 900px;
-  justify-content: space-evenly;
+  margin-top: 20px;
 
+  .search-container {
+    text-align: center;
 
-  app-house {
-    width: 46%;
+    .input {
+      border: 1px solid rgba(159, 159, 159, 0.53);
+      border-radius: 5px;
+      width: 94%;
+      line-height: 2em;
+    }
   }
 
+  .houses-results-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-evenly;
+
+    app-house {
+      width: 46%;
+    }
+  }
+
+  #more-results-button {
+    color: #004F63;
+    text-decoration: underline;
+    margin-top: 20px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      font-weight: bolder;
+      text-decoration: none;
+      font-size: larger;
+    }
+  }
 }
